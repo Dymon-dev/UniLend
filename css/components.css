@@ -1,0 +1,105 @@
+/* components.css: reusable building blocks. Pages combine these classes. */
+
+/* ---- BUTTONS ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 48px;            /* comfortable tap size on phones */
+  padding: 0 var(--space-5);
+  border: 2px solid transparent;
+  border-radius: var(--radius-sm);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-primary   { background: var(--color-navy); color: #fff; }
+.btn-accent    { background: var(--color-teal); color: var(--color-navy); }
+.btn-secondary { background: var(--color-surface); color: var(--color-navy); border-color: var(--color-border); }
+.btn-block     { width: 100%; }
+.btn:disabled  { opacity: 0.5; cursor: not-allowed; }
+
+/* ---- CARDS ---- */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-card);
+}
+.card-dark { background: var(--color-navy); color: #fff; border-color: var(--color-navy); }
+.card-mint { background: var(--color-mint); border-color: var(--color-teal); }
+
+/* Muted text needs to be LIGHT when it sits on a dark card */
+.card-dark .text-muted {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ---- FORMS ---- */
+.form-group { display: flex; flex-direction: column; gap: var(--space-2); margin-bottom: var(--space-4); }
+.label      { font-weight: 600; font-size: var(--text-sm); }
+.input {
+  min-height: 48px;
+  padding: 0 var(--space-3);
+  border: 1.5px solid var(--color-navy);
+  border-radius: var(--radius-sm);
+  font: inherit;
+  background: var(--color-surface);
+}
+.input.input-error { border-color: var(--color-red); }
+.error-text        { color: var(--color-red); font-size: var(--text-sm); min-height: 1.2em; }
+
+/* ---- BADGES AND MESSAGES ---- */
+.badge {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  border-radius: 999px;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  background: var(--color-mint);
+  color: var(--color-navy);
+}
+.badge-warning { background: var(--color-yellow); }
+
+.success-message {
+  text-align: center;
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  background: var(--color-mint);
+  border: 1px dashed var(--color-teal);
+}
+
+.page-header { display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-5); }
+
+/* ---- ICON TILE: rounded teal square holding an icon ---- */
+.icon-tile {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;               /* don't squash the tile in a tight row */
+  border-radius: var(--radius-sm);
+  background: var(--color-teal);
+}
+.icon-tile img     { width: 20px; height: 20px; }
+.icon-tile-lg      { width: 72px; height: 72px; border-radius: var(--radius-md); }
+.icon-tile-lg img  { width: 36px; height: 36px; }
+
+/* ---- FEATURE ROW: icon on the left, text on the right ---- */
+.feature-item  { display: flex; align-items: flex-start; gap: var(--space-3); }
+.feature-title { font-size: var(--text-base); font-weight: 600; }
+.feature-text  { font-size: var(--text-sm); color: rgba(255, 255, 255, 0.7); }
+
+/* ---- DEMO NOTICE ---- */
+.demo-notice {
+  text-align: center;
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.form-hint   { color: var(--color-text-muted); font-size: var(--text-sm); }
+.back-link   { display: inline-flex; padding: var(--space-2); margin: 0 0 var(--space-3) calc(var(--space-2) * -1); }
+.auth-footer { text-align: center; margin-top: var(--space-5); font-size: var(--text-sm); }
+.terms-text  { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-4); }
+.auth-header { margin-bottom: var(--space-5); }

@@ -1,0 +1,81 @@
+/* base.css: design variables, reset, and typography.
+   Everything else in the app reads from the variables in :root. */
+
+:root {
+  /* Colors: REPLACE these with the exact hex codes from your Figma */
+  --color-navy: #1D2D3E;       /* 1D2D3E and 1A2B3C are almost identical: pick one */
+  --color-teal: #4ECDC4;       /* main buttons and accents */
+  --color-aqua: #60E3D9;       /* NEW: brighter aqua (check circles, amount card); 6DE0D8 is the same idea */
+  --color-teal-dark: #1B7F78;  /* teal for small text on white */
+  --color-mint: #D3F3F0;       /* 4ECDC4 at 25% opacity over white */
+  --color-text: #1C1B1F;
+  --color-bg: #E8EDF2;
+  --color-border: #CFCFCF;
+  --color-surface: #FFFFFF;
+  --color-text-muted: #5F6B7A;   /* gray with enough contrast on white */
+  --color-red: #C62F2F;          /* a darker red than I first suggested, so small error text is readable */
+  --color-yellow: #FFE94D;       /* replace with the exact yellow from your Figma loan badge */
+
+  /* Spacing scale: use these instead of random pixel values */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+
+  /* Shape and depth */ 
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+  --shadow-card: 0 2px 8px rgba(30, 43, 60, 0.12);
+
+  /* Typography */
+  --font-main: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --text-sm: 0.8125rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.75rem;
+}
+
+/* Reset: browsers add their own margins and sizing. Start from a clean slate. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* padding stays INSIDE an element's width */
+}
+
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.5;
+}
+
+h1 { font-size: var(--text-xl); line-height: 1.2; }
+h2 { font-size: var(--text-lg); }
+h3 { font-size: var(--text-base); }
+
+a {
+  color: var(--color-teal-dark);
+  text-decoration: none;
+}
+
+img { max-width: 100%; display: block; }
+
+/* Keyboard users need to SEE where they are. Never remove this. */
+:focus-visible {
+  outline: 3px solid var(--color-teal-dark);
+  outline-offset: 2px;
+}
+
+.text-muted { color: var(--color-text-muted); font-size: var(--text-sm); }

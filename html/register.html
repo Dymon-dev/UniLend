@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniLend | Create Account</title>
+    <link rel="icon" href="../assets/icons/credit-card.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/layout.css">
+</head>
+<body>
+    <main class="auth-screen">
+        <div class="container">
+
+            <a class="back-link" href="index.html" aria-label="Back">
+                <img src="../assets/icons/arrow-left.svg" alt="">
+            </a>
+
+            <header class="auth-header">
+                <h1>Create Account</h1>
+                <p class="text-muted">Join thousands of students managing their finances</p>
+            </header>
+
+            <form id="register-form" novalidate>
+                <div class="form-group">
+                    <label class="label" for="name">Full Name</label>
+                    <input class="input" type="text" id="name" name="name"
+                           placeholder="John Doe" autocomplete="name"
+                           aria-describedby="name-error" required>
+                    <p class="error-text" id="name-error" aria-live="polite"></p>
+                </div>
+
+                <div class="form-group">
+                    <label class="label" for="email">University Email</label>
+                    <input class="input" type="email" id="email" name="email"
+                           placeholder="you@university.edu.ph" autocomplete="email"
+                           aria-describedby="email-error" required>
+                    <p class="error-text" id="email-error" aria-live="polite"></p>
+                </div>
+
+                <div class="form-group">
+                    <label class="label" for="phone">Phone Number</label>
+                    <input class="input" type="tel" id="phone" name="phone"
+                           placeholder="0917 123 4567" autocomplete="tel"
+                           aria-describedby="phone-error" required>
+                    <p class="error-text" id="phone-error" aria-live="polite"></p>
+                </div>
+
+                <div class="form-group">
+                    <label class="label" for="password">Password</label>
+                    <input class="input" type="password" id="password" name="password"
+                           placeholder="********" autocomplete="new-password"
+                           aria-describedby="password-hint password-error" required>
+                    <p class="form-hint" id="password-hint">At least 8 characters, with a letter and a number.</p>
+                    <p class="error-text" id="password-error" aria-live="polite"></p>
+                </div>
+
+                <p class="terms-text">By signing up, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+
+                <button type="submit" class="btn btn-primary btn-block">Continue</button>
+            </form>
+
+            <div class="success-message" id="register-success" hidden>
+                Account created! Taking you to verification…
+            </div>
+
+            <p class="auth-footer">Already have an account? <a href="login.html">Sign In</a></p>
+
+        </div>
+    </main>
+
+    <script type="module" src="../js/pages/register.js"></script>
+</body>
+</html>
